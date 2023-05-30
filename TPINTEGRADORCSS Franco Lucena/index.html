@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TUP LC2 - TP Integrador - Cine</title>
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/pages/index.css" />
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh; /* Opcional: establece una altura para el contenedor */
+    flex-direction: column; /* Cambia la dirección del flexbox a column */
+  }
+  
+  .form-section {
+    padding: 0px; /* Espacio interno de la sección del formulario */
+  }
+  
+  .form {
+    display: flex; /* Para alinear los elementos del formulario en una fila */
+    align-items: center;
+    margin-left: 20px; /* Añade un margen entre el h2 y el formulario */
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>
+      <!--Titulo Cabecera-->
+      <img src="img/cinema_popcorn.ico" alt="Cinema Popcorn" style="vertical-align: middle; width: 70px; margin-right: 10px;">
+      <!--Titulo Cabecera-->
+      <span style="text-shadow: 2px 2px 4px #333;">Cartelera de Cine</span>
+    </h1>
+    <nav>
+      <!--Menu Superior-->
+      <ul>
+        <li class="current-page"><a href="#">Cartelera</a></li>
+        <li><a href="favorities.html">Mis Favoritas</a></li>
+        <li><a href="help.html">Ayuda</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Contenido principal de la página -->
+  <main>
+    <h2>Últimas Películas en Cartelera</h2>
+    <section id="form-movie-new">
+      <!--Seccion para agregar una pelicula favorita por codigo-->
+      <div class="container">
+        <h2>Agregar película</h2>
+        <form>
+          <label for="movie-title">Título:</label>
+          <input type="text" id="movie-title" name="title" required>
+          <button type="submit">Agregar</button>
+        </form>
+      </div>
+    </section>
+   <!-- <section id="sec-messages">
+      Seccion para mensajes
+      <div id="success-message" class="message hidden">Película agregada con éxito</div>
+      <div id="error-message" class="message hidden">Error: La Película seleccionada no se encuentra en la API o se produjo un error al consultar</div>
+      <div id="duplicate-message" class="message hidden">La Película ingresada ya se encuentra almacenada</div>
+    </section>-->
+    </section>
+    <section id="sec_peliculas">
+      <!--Seccion visualizacion de peliculas-->
+      <div class="contenedorPeliculas">
+      <div class="columna pelicula1">
+        <img src="https://image.tmdb.org/t/p/w500//fcFMd3HdyX7r5gtFwVnn2qr5Yhq.jpg" alt="Creed III">
+        <h3 style="color: yellow;">Creed III</h3>
+        <p><strong>Codigo</strong>:677179</p>
+        <p><strong>Titulo original</strong>:Creed III</p>
+        <p><strong>Idioma original</strong>: English</p>
+        <p><strong>Fecha de lanzamiento</strong> : 2023-03-01</p>
+        <p style="text-decoration: underline; color: white; background-color: #666; border-radius: 5px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); cursor: pointer; padding: 5px 10px; display: inline-block;">Agregar a favoritos</p>
+      </div>
+        <div class="columna pelicula2"> 
+          <img src="img/dragonboru.jpg" alt="Super Hero">
+          <h3 style="color: yellow;">Dragon Ball Super : Super Hero</h3>
+          <p><strong>Codigo</strong>:677180</p>
+          <p><strong>Titulo original</strong>:Dragon Ball Super : Super Hero</p>
+          <p><strong>Idioma original</strong>: 日本語</p>
+          <p><strong>Fecha de lanzamiento</strong> : 2022-6-11</p>
+          <p style="text-decoration: underline; color: white; background-color: #666; border-radius: 5px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); cursor: pointer; padding: 5px 10px; display: inline-block;">Agregar a favoritos</p>
+        </div>
+        <div class="columna pelicula3">
+          <img src="img/spiderverse.jpg" alt="Spiderverse">
+          <h3 style="color: yellow;">Spider-Man : Across the Spiderverse</h3>
+          <p><strong>Codigo</strong>:677181</p>
+          <p><strong>Titulo original</strong>:Spider-Man : Across the Spiderverse</p>
+          <p><strong>Idioma original</strong>: English</p>
+          <p><strong>Fecha de lanzamiento</strong> : 2023-06-01</p>
+          <p style="text-decoration: underline; color: white; background-color:#666; border-radius: 5px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); cursor: pointer; padding: 5px 10px; display: inline-block;">Agregar a favoritos</p>
+        </div>
+        <div class="columna pelicula4">
+          <img src="img/ken.jpg" alt="Barbie">
+          <h3 style="color: yellow;">Barbie</h3>
+          <p><strong>Codigo</strong>:677182</p>
+          <p><strong>Titulo original</strong>:Barbie</p>
+          <p><strong>Idioma original</strong>: English</p>
+          <p><strong>Fecha de lanzamiento</strong> : 2023-07-21</p>
+          <p style="text-decoration: underline; color: white; background-color: #666; border-radius: 5px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); cursor: pointer; padding: 5px 10px; display: inline-block;">Agregar a favoritos</p>
+        </div>
+      </div>
+    </section>
+    <section id="sec_paginador_peliculas">
+      <!--Seccion de Paginacion-->
+      <div class="paginacion" id="paginacion">
+        <button id="btnAnterior">Anterior</button>
+        <button id="btnSiguiente">Siguiente</button>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <p>Desarrollado con ♥ - LC2</p>
+  </footer>
+</body>
+
+</html>

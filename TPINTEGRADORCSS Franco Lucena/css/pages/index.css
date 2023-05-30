@@ -1,0 +1,318 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   
+    
+  }
+  :root {
+    /* Declaro variables CSS con colores principales */
+    --color-theme: #FFCE30;
+    --color-active: #288BA8;
+    --color-back-active: #746AB0;
+    --color-back-inactive: #c4c6c9;
+    --color-titulos: #E83845;
+    --color-texto-blanco: #FFF;
+    --color-gradient: linear-gradient(
+      to right,
+      var(--color-theme),
+      var(--color-back-active)
+    );
+  }
+  main {
+   
+    margin-top: 120px;
+    margin-bottom: 120px; /* Ajusta este valor según sea necesario */
+    overflow: auto;
+    padding: 16px;
+    padding-bottom: 60px;
+    height: calc(100% - 200px); /* Resta el margen superior e inferior */
+    width: 100%;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    width: 100%;
+    background-color: #e0e0e0;
+    color: #1d1d1d;
+  }
+  .contenedorPeliculas {
+    display: grid;
+    grid-template-areas: "pelicula1 pelicula2 pelicula3 pelicula4";
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    gap: 30px;
+    
+  }
+  .contenedorPeliculas h3 {
+    -webkit-text-stroke: 0.5px black; 
+   
+  }
+  .columna {
+    width: 100%;
+    margin-bottom: 40px;
+    margin-right: 0px;
+    
+  }
+  .columna img {
+   
+       
+        height: 59%;
+        object-fit: cover;
+      
+  }
+  
+  .pelicula1 {
+    grid-area: pelicula1;
+  }
+  
+  .pelicula2 {
+    grid-area: pelicula2;
+  }
+  
+  .pelicula3 {
+    grid-area: pelicula3;
+  }
+  
+  .pelicula4 {
+    grid-area: pelicula4;
+  }
+  
+  
+  
+  .contenedorPeliculas p {
+    font-size: 12px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .contenedorPeliculas h3 {
+    font-size: 16px;
+    font-weight: 600;
+
+  }
+  
+  .contenedorPeliculas img {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    border-radius: 15px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  button,
+  a {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-image: url('../../img/FondoCine6.webp');
+    border-radius: 0 0% 20px 20px ;
+    border-bottom: 2px solid var(--color-active);
+  }
+  nav > ul {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+  }
+  nav li {
+    flex: 0 0 auto;
+  }
+  nav li a {
+    display: block;
+    padding: 16px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--color-texto-blanco);
+    background-color: var(--color-back-inactive);
+  }
+  nav li.current-page a {
+    color: var(--color-theme);
+    background-color: var(--color-active);
+    pointer-events: none;
+  }
+  main {
+    margin-top: 10px;
+    overflow: auto;
+    padding: 16px;
+    padding-bottom: 60px;
+    height: calc(100% - 120px);
+    width: 100%;
+  }
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: 0;
+    color: var(--color-theme);
+  }
+  h1 > img {
+    width: 70px;
+    vertical-align: middle;
+    padding: 10px;
+  }
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-titulos);
+    margin: 16px 0;
+    text-align: center;
+  }
+  h3 {
+    color: var(--color-theme);
+    margin: 8px 0;
+  }
+  main section {
+    display: flex;
+    justify-content: space-around;
+  }
+  footer {
+    position: fixed;
+    bottom: 0px;
+    background-color: var(--color-active);
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  footer p {
+    font-size: small;
+    color: var(--color-theme);
+  }
+  main p {
+    margin-bottom: 16px;
+  }
+  /* Media Query: Estilos a aplicar sólo en pantallas mayores a 400px */
+  @media (min-width: 400px) {
+    main {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    footer {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+  
+  .loader {
+    width: 60px;
+    height: 60px;
+   }
+   
+   .loader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-top: 2px solid #8900FF;
+    border-right: 2px solid transparent;
+    animation: spinner8217 0.8s linear infinite;
+   }
+   
+   @keyframes spinner8217 {
+    to {
+     transform: rotate(360deg);
+    }
+   }
+  .loader-container{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .display{
+    display: none;
+  }
+  .msg{
+    width: 50%;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: center;
+  }
+  .amarillo{
+    background-color: #ffc107;
+  }
+  .rojo{
+    background-color:#dc3545;
+  }
+  .verde{
+    background-color:#28a745 ;
+  }
+  .paginacion {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .paginacion button {
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    min-width: 80px;
+    background-color: #1e3799;
+    color: #fff;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    transition: 0.3s ease all;
+  }
+  
+  .paginacion button:hover {
+    background-color: var(--color-back-active);
+  }
+  
+  /* Estilos Generales Botones Favoritos */
+  .button {
+    background: #1e3799;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px 0;
+    text-align: center;
+    width: 200px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0px 3px 0px #373c3c;
+  }
+  
+  .button span {
+    margin-right: 10px;
+  }
+  
+  .button.medium {
+    width: 150px;
+  }
+  
+  .button.radius {
+    border-radius: 50px;
+  }
+  
+  .button:hover {
+    box-shadow: 0px 0px 0px;
+  }
+  
